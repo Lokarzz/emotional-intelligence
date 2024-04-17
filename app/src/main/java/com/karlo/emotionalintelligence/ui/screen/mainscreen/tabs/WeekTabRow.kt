@@ -13,19 +13,12 @@ import com.karlo.emotionalintelligence.ui.screen.mainscreen.tabs.tab.DayTab
 import com.karlo.emotionalintelligence.util.weeks.WeeksInformation
 
 @Composable
-fun WeekTabRow(onTabSelect: (Int) -> Unit, tabs: List<String>) {
-    var selectedTabIndex by remember {
-        mutableIntStateOf(0)
-    }
-
-
-
-    TabRow(selectedTabIndex = selectedTabIndex) {
+fun WeekTabRow(onTabSelect: (Int) -> Unit, tabs: List<String>, currentIndex: Int) {
+    TabRow(selectedTabIndex = currentIndex) {
         tabs.forEachIndexed { index, dayOfWeek ->
             DayTab(
-                selected = selectedTabIndex == index,
+                selected = currentIndex == index,
                 onClick = {
-                    selectedTabIndex = index
                     onTabSelect(index)
                 },
                 dayOfWeek = dayOfWeek.uppercase()
@@ -41,6 +34,6 @@ private fun WeekTabRowPreview() {
         val tabs by remember {
             mutableStateOf(WeeksInformation().daysOfTheWeek())
         }
-        WeekTabRow(onTabSelect = {}, tabs = tabs)
+        WeekTabRow(onTabSelect = {}, tabs = tabs, currentIndex = 1)
     }
 }
