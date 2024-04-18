@@ -19,7 +19,7 @@ object ApiExtension {
      * @return this function return success/error UIState
      */
     suspend fun <T> fetchResponse(apiCall: suspend () -> Response<T>): UIState<T> {
-        return withContext(Dispatchers.Default) {
+        return withContext(Dispatchers.IO) {
             try {
                 val response = apiCall()
                 when {

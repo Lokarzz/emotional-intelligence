@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.karlo.emotionalintelligence.model.level.Level
+import com.karlo.emotionalintelligence.model.level.LevelData
 import com.karlo.emotionalintelligence.ui.composables.level.activity.LevelActivity
 import com.karlo.emotionalintelligence.ui.composables.level.details.Details
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
@@ -18,7 +18,7 @@ import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun LevelItem(level: Level) {
+fun LevelItem(level: LevelData) {
 
     Column {
         Details(level = level.level, title = level.title, description = level.description)
@@ -39,7 +39,7 @@ fun LevelItem(level: Level) {
 @Composable
 private fun LevelItemPreview() {
     PreviewTheme {
-        LevelItem(level = Level.createMockLevel(1))
+        LevelItem(level = LevelData.createMockLevel("1"))
     }
 }
 

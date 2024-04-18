@@ -25,6 +25,6 @@ fun MainNavigation(
         onPageChange(pagerState.currentPage)
     }
     HorizontalPager(modifier = modifier, state = pagerState) {
-        LevelScreen()
+        LevelScreen(dayOfTheWeek = daysOfTheWeek[it])
     }
 }

@@ -14,8 +14,8 @@ class LocalResultRepository @Inject constructor(
 
     suspend fun fetchResult(dayOfWeek: String): ResultResponse? {
         return withContext(Dispatchers.IO) {
-            val storedValue = localDataStoreRepository.fetch(dayOfWeek)
-            storedValue.first().fetchData(ResultResponse::class.java)
+            val storedValue = localDataStoreRepository.fetch(dayOfWeek).first()
+            storedValue.fetchData(ResultResponse::class.java)
         }
     }
 

@@ -52,7 +52,6 @@ fun ActivityImage(isDone: Boolean, imgSrc: String) {
                 }
             }
         }
-
     }
 }
 

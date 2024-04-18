@@ -22,7 +22,7 @@ import com.karlo.emotionalintelligence.ui.theme.Black1
 
 
 @Composable
-fun Level(level : Int) {
+fun Level(level : String) {
     Box(modifier = Modifier.size(100.dp)) {
         Image(
             modifier = Modifier.align(Alignment.TopCenter),
@@ -50,6 +50,6 @@ fun Level(level : Int) {
 @Composable
 private fun LevelPreview() {
     PreviewTheme {
-        Level(2)
+        Level("2")
     }
 }

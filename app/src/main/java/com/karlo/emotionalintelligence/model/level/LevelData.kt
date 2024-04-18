@@ -1,20 +1,20 @@
 package com.karlo.emotionalintelligence.model.level
 
-import com.karlo.emotionalintelligence.model.level.activity.Activity
+import com.karlo.emotionalintelligence.model.level.activity.ActivityData
 import kotlin.random.Random
 
-data class Level(
-    val level: Int,
+data class LevelData(
+    val level: String,
     val title: String,
     val description: String,
-    val activities: List<Activity>
+    val activities: List<ActivityData>
 ) {
     companion object {
 
 
-        fun createMockLevel(level : Int): Level {
-            val activities = List(Random.nextInt(3, 5)) { Activity.createMockActivity() }
-            return Level(
+        fun createMockLevel(level : String): LevelData {
+            val activities = List(Random.nextInt(3, 5)) { ActivityData.createMockActivity() }
+            return LevelData(
                 level = level,
                 title = "Level $level",
                 description = "Description for Level $level",
