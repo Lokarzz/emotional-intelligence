@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 import com.karlo.emotionalintelligence.ui.composables.profileheader.profile.Profile
 import com.karlo.emotionalintelligence.ui.composables.profileheader.tamingtemper.TamingTemper
+import kotlin.random.Random
 
 @Composable
 fun ProfileHeader() {
@@ -20,7 +21,7 @@ fun ProfileHeader() {
             .padding(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        TamingTemper(progress = 50)
+        TamingTemper(progress = Random.nextInt(100))
         Profile()
     }
 }

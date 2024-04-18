@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.karlo.emotionalintelligence.R
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 import com.karlo.emotionalintelligence.ui.composables.statuscount.StatusCount
+import kotlin.random.Random
 
 @Composable
 fun Profile() {
@@ -26,7 +27,7 @@ fun Profile() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        StatusCount(drawableId = R.drawable.ic_fire, count = 10)
+        StatusCount(drawableId = R.drawable.ic_fire, count = Random.nextInt(30))
         Card(
             modifier = Modifier.size(40.dp),
             shape = CircleShape,
