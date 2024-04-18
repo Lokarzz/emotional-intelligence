@@ -21,4 +21,22 @@ object GsonExtension {
         }
     }
 
+    fun <T> String.fetchData(clazz: Class<T>?): T? {
+        val gson = Gson()
+        return try {
+            gson.fromJson(this, clazz)
+        } catch (e: Exception) {
+            null
+        }
+    }
+    fun Any.toJsonString(): String {
+        var ret = ""
+        try {
+            ret = Gson().toJson(this)
+        } catch (_: Exception) {
+
+        }
+        return ret
+    }
+
 }

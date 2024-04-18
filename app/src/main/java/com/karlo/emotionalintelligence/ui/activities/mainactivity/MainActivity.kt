@@ -12,7 +12,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 import com.karlo.emotionalintelligence.ui.screen.mainscreen.MainScreen
 import com.karlo.emotionalintelligence.ui.theme.EmotionalIntelligenceTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

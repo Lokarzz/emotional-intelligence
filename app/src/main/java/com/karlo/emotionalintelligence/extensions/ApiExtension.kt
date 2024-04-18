@@ -26,6 +26,7 @@ object ApiExtension {
                     response.isSuccessful && response.body() != null -> {
                         UIState.success(response.body())
                     }
+
                     else -> {
                         response.catchError()
                     }
@@ -49,6 +50,7 @@ object ApiExtension {
                     is UnknownHostException -> {
                         ApiError.Status.NO_NETWORK
                     }
+
                     else -> {
                         ApiError.Status.UNKNOWN
                     }

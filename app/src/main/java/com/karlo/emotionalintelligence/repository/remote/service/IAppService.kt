@@ -8,7 +8,7 @@ import retrofit2.http.Path
 
 interface IAppService {
 
-    @GET("/results/{weekOfDay}")
-    suspend fun fetchResult(@Path("weekOfDay") weekOfDay: String) : Response<ResultResponse>
+    @GET("/results/{dayOfWeek}")
+    suspend fun fetchResult(@Path("dayOfWeek") dayOfWeek: String) : Response<ResultResponse>
 
 }

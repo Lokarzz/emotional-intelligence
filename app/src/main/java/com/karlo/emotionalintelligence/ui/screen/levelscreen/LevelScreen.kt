@@ -7,19 +7,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.karlo.emotionalintelligence.model.level.Level
 import com.karlo.emotionalintelligence.ui.composables.level.LevelItem
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 
 @Composable
-fun LevelScreen(levelViewModel: LevelViewModel = viewModel()) {
+fun LevelScreen(levelViewModel: LevelViewModel = hiltViewModel()) {
 //    val levels by remember {
 //        mutableStateOf<List<Level>?>(null)
 //    }
@@ -27,7 +28,9 @@ fun LevelScreen(levelViewModel: LevelViewModel = viewModel()) {
         mutableStateOf(List(2) { Level.createMockLevel(it + 1) })
     }
     val levelCpy = levels ?: return
-    println(levelViewModel.test())
+    LaunchedEffect(key1 = Unit) {
+        levelViewModel.fetchResults()
+    }
     LevelView(levels = levelCpy)
 }
 

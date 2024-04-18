@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.googleDaggerHiltAndroid)
+    kotlin("kapt")
 }
 
 android {
@@ -25,7 +27,11 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField("String", "EI_COMPANY_BASE_URL", "\"https://api-staging.eicompany.co/\"")
+            buildConfigField(
+                "String",
+                "EI_COMPANY_BASE_URL",
+                "\"https://api-staging.eicompany.co/\""
+            )
         }
 
         release {
@@ -70,12 +76,16 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.hilt.android)
     implementation(libs.retrofit)
     implementation(libs.glide)
     implementation(libs.converter.gson)
     implementation(libs.androidx.datastore)
     implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -83,4 +93,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+kapt {
+    correctErrorTypes = true
 }
