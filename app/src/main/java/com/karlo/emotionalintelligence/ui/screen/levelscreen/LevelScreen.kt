@@ -13,12 +13,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.karlo.emotionalintelligence.model.compose.level.Level
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.karlo.emotionalintelligence.model.level.Level
 import com.karlo.emotionalintelligence.ui.composables.level.LevelItem
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 
 @Composable
-fun LevelScreen() {
+fun LevelScreen(levelViewModel: LevelViewModel = viewModel()) {
 //    val levels by remember {
 //        mutableStateOf<List<Level>?>(null)
 //    }
@@ -26,7 +27,7 @@ fun LevelScreen() {
         mutableStateOf(List(2) { Level.createMockLevel(it + 1) })
     }
     val levelCpy = levels ?: return
-
+    println(levelViewModel.test())
     LevelView(levels = levelCpy)
 }
 

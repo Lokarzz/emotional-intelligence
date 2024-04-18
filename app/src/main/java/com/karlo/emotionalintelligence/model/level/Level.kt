@@ -1,6 +1,6 @@
-package com.karlo.emotionalintelligence.model.compose.level
+package com.karlo.emotionalintelligence.model.level
 
-import com.karlo.emotionalintelligence.model.compose.level.activity.Activity
+import com.karlo.emotionalintelligence.model.level.activity.Activity
 import kotlin.random.Random
 
 data class Level(

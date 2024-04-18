@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.karlo.emotionalintelligence.model.compose.level.Level
+import com.karlo.emotionalintelligence.model.level.Level
 import com.karlo.emotionalintelligence.ui.composables.level.activity.LevelActivity
 import com.karlo.emotionalintelligence.ui.composables.level.details.Details
 import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme

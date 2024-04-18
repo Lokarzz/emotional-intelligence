@@ -1,4 +1,4 @@
-package com.karlo.emotionalintelligence.model.compose.level.activity
+package com.karlo.emotionalintelligence.model.level.activity
 
 import kotlin.random.Random
 
