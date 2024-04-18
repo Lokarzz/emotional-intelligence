@@ -21,7 +21,9 @@ class ResultRepository @Inject constructor(
     suspend fun fetchResult(dayOfWeek: String) = flow {
         val localResponse = localResultRepository.fetchResult(dayOfWeek = dayOfWeek)
 
-        localResponse?.let { emit(UIState.success(it)) }
+        localResponse?.let {
+            emit(UIState.success(it))
+        }
 
         val remoteResponse =
             fetchResponse { remoteResultRepository.fetchResult(dayOfWeek = dayOfWeek) }

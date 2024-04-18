@@ -32,7 +32,8 @@ class LevelViewModel @Inject constructor(
                         val levelTransformer = LevelTransformer(response)
                         _uiState.update {
                             it.copy(
-                                levelDataList = levelTransformer.mapToLevelData()
+                                levelDataList = levelTransformer.mapToLevelData(),
+                                isLoading = false,
                             )
                         }
                     }
@@ -42,9 +43,10 @@ class LevelViewModel @Inject constructor(
                     }
 
                     UIState.Status.LOADING -> {
+                        val isLoading = state.loadingData?.isLoading ?: return@collect
                         _uiState.update {
                             it.copy(
-                                isLoading = state.loadingData?.isLoading == true
+                                isLoading = isLoading
                             )
                         }
                     }
