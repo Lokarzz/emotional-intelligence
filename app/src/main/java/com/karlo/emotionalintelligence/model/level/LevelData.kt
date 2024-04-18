@@ -11,6 +11,8 @@ data class LevelData(
 ) {
     companion object {
 
+        const val STATE_LOCKED = "LOCKED"
+        const val STATE_AVAILABLE = "AVAILABLE"
 
         fun createMockLevel(level : String): LevelData {
             val activities = List(Random.nextInt(3, 5)) { ActivityData.createMockActivity() }

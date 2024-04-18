@@ -14,6 +14,6 @@ data class Activities (
   @SerializedName("descriptionB" ) var descriptionB : String?     = null,
   @SerializedName("state"        ) var state        : String?     = null,
   @SerializedName("icon"         ) var icon         : Icon?       = Icon(),
-  @SerializedName("lockedIcon"   ) var lockedIcon   : LockedIcon? = LockedIcon()
+  @SerializedName("lockedIcon"   ) var lockedIcon   : Icon? = Icon()
 
 )

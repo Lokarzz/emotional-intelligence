@@ -6,6 +6,7 @@ import com.karlo.emotionalintelligence.repository.model.result.Activities
 import com.karlo.emotionalintelligence.repository.model.result.ResultResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlin.random.Random
 
 class LevelTransformer(private val resultResponse: ResultResponse) {
 
@@ -18,21 +19,34 @@ class LevelTransformer(private val resultResponse: ResultResponse) {
                     level = it.level ?: "",
                     title = it.title ?: "",
                     description = it.description ?: "",
-                    activities = mapActivities(it.activities)
+                    activities = it.activities.mapActivities()
                 )
             }
         }
-
     }
 
-    private fun mapActivities(activities: List<Activities>): List<ActivityData> {
+    private fun List<Activities>.mapActivities(): List<ActivityData> {
 
-        return activities.map {
+        return map {
+//
+//            val isDone = it.state != ActivityData.STATE_NOT_SET
+            val isDone =
+                Random.nextBoolean() // just for mock since state has only one value in json
+
             ActivityData(
                 title = it.title ?: "",
-                isDone = true,
-                imageSrc = ""
+                isDone = isDone,
+                imageSrc = it.fetchImgSrc(isDone = isDone)
             )
         }
+    }
+
+    private fun Activities.fetchImgSrc(isDone: Boolean): String {
+        val targetIcon = if (isDone) icon else lockedIcon
+        return targetIcon?.file?.url ?: ""
+    }
+
+    companion object {
+
     }
 }
