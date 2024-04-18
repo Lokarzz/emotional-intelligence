@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.karlo.emotionalintelligence.model.level.LevelData
@@ -20,7 +21,7 @@ import com.karlo.emotionalintelligence.ui.composables.preview.PreviewTheme
 @Composable
 fun LevelItem(level: LevelData) {
 
-    Column {
+    Column(modifier = Modifier.blur(if (level.isAvailable) 0.dp else 6.dp)) {
         Details(level = level.level, title = level.title, description = level.description)
         FlowRow(
             modifier = Modifier.align(Alignment.CenterHorizontally),

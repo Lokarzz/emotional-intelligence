@@ -7,7 +7,8 @@ data class LevelData(
     val level: String,
     val title: String,
     val description: String,
-    val activities: List<ActivityData>
+    val activities: List<ActivityData>,
+    val isAvailable : Boolean,
 ) {
     companion object {
 
@@ -20,7 +21,8 @@ data class LevelData(
                 level = level,
                 title = "Level $level",
                 description = "Description for Level $level",
-                activities = activities
+                activities = activities,
+                isAvailable = true
             )
         }
     }

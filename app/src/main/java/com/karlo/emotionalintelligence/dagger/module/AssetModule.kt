@@ -1,9 +1,6 @@
 package com.karlo.emotionalintelligence.dagger.module
 
 import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import com.karlo.emotionalintelligence.repository.local.datastore.AppDataStore
 import com.karlo.emotionalintelligence.util.assets.AssetJsonRetriever
 import dagger.Module
 import dagger.Provides

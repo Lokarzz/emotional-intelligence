@@ -77,13 +77,13 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.retrofit)
-    implementation(libs.glide)
     implementation(libs.converter.gson)
     implementation(libs.androidx.datastore)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.hilt.navigation.compose)
 
     implementation(libs.hilt.android)
+    implementation(libs.compose)
     kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)

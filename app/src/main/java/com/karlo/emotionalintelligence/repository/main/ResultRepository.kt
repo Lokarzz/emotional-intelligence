@@ -1,14 +1,11 @@
 package com.karlo.emotionalintelligence.repository.main
 
-import android.os.Looper
 import com.karlo.emotionalintelligence.extensions.ApiExtension.fetchResponse
 import com.karlo.emotionalintelligence.repository.local.LocalResultRepository
 import com.karlo.emotionalintelligence.repository.model.base.LoadingData
 import com.karlo.emotionalintelligence.repository.model.base.UIState
 import com.karlo.emotionalintelligence.repository.remote.RemoteResultRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject

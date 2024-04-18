@@ -24,6 +24,7 @@ import com.karlo.emotionalintelligence.ui.theme.Purple1
 @Composable
 fun ActivityImage(isDone: Boolean, imgSrc: String) {
     Box(modifier = Modifier.size(144.dp, 132.dp)) {
+
         Image(
             modifier = Modifier
                 .fillMaxSize(),

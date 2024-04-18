@@ -1,7 +1,6 @@
 package com.karlo.emotionalintelligence.repository.model.result
 
 import com.google.gson.annotations.SerializedName
-import com.karlo.emotionalintelligence.repository.model.result.Activities
 
 
 data class Levels (

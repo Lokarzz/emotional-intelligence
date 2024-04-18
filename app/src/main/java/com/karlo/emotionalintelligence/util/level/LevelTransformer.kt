@@ -19,7 +19,8 @@ class LevelTransformer(private val resultResponse: ResultResponse) {
                     level = it.level ?: "",
                     title = it.title ?: "",
                     description = it.description ?: "",
-                    activities = it.activities.mapActivities()
+                    activities = it.activities.mapActivities(),
+                    isAvailable = it.state == LevelData.STATE_AVAILABLE
                 )
             }
         }
